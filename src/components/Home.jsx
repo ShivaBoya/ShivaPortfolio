@@ -331,7 +331,7 @@ const Home = () => {
           </ButtonContainer>
         </TextSection>
         <ImageContainer>
-          <img src="/public/profile.jpg" alt="Boya Shiva" />
+          <img src="https://res.cloudinary.com/dumhixyxy/image/upload/MyProfile01_mhsjmt" alt="Boya Shiva" />
         </ImageContainer>
       </ContentWrapper>
     </HomeContainer>
