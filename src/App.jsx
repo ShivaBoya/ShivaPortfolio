@@ -201,7 +201,7 @@ const App = () => {
           {/*<NavLink href="#experience">Experience</NavLink>*/}
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#why-hire-me">Why Hire Me?</NavLink>
+          <NavLink href="#why-hire-me">Work</NavLink>
           <NavLink href="#contact">Contact</NavLink>
         </NavLinks>
         <MenuIcon onClick={toggleMobileMenu}>
@@ -219,7 +219,7 @@ const App = () => {
       {/*<MobileNavLink href="#experience" onClick={closeMobileMenu}>Experience</MobileNavLink>*/}
       <MobileNavLink href="#projects" onClick={closeMobileMenu}>Projects</MobileNavLink>
       <MobileNavLink href="#skills" onClick={closeMobileMenu}>Skills</MobileNavLink>
-      <MobileNavLink href="#why-hire-me" onClick={closeMobileMenu}>Why Hire Me?</MobileNavLink>
+      <MobileNavLink href="#why-hire-me" onClick={closeMobileMenu}>Work</MobileNavLink>
       <MobileNavLink href="#contact" onClick={closeMobileMenu}>Contact</MobileNavLink>
     </MobileMenu>
 
