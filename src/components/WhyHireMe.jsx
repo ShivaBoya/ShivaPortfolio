@@ -154,7 +154,7 @@ const ReasonText = styled.p`
 const WhyHireMe = () => {
   return (
     <Container>
-      <Title>Why Hire Me?</Title>
+      <Title>Work</Title>
       <Grid>
         {reasons.map((reason, index) => (
           <ReasonCard key={index} index={index}>
