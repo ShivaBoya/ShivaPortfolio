@@ -302,8 +302,12 @@ const Home = () => {
             technologies. With expertise in both frontend and backend
             development, I transform complex problems into elegant solutions
             that prioritize <strong>user experience</strong> and{" "}
-            <strong>performance</strong>.
+            <strong>performance</strong>. I am also passionate about{" "}
+            <strong>DSA and problem-solving</strong>, constantly honing my
+            skills to write efficient algorithms and tackle challenging coding
+            problems with creativity and precision.
           </Description>
+
           <TechStack>
             <div>
               <FaCode />
@@ -331,7 +335,10 @@ const Home = () => {
           </ButtonContainer>
         </TextSection>
         <ImageContainer>
-          <img src="https://res.cloudinary.com/dumhixyxy/image/upload/MyProfile01_mhsjmt" alt="Boya Shiva" />
+          <img
+            src="https://res.cloudinary.com/dumhixyxy/image/upload/MyProfile01_mhsjmt"
+            alt="Boya Shiva"
+          />
         </ImageContainer>
       </ContentWrapper>
     </HomeContainer>
