@@ -51,7 +51,7 @@ const projectCategories = {
       deployedLink: "https://resume-builder-krvx.vercel.app/",
       githubLink: "https://github.com/ShivaBoya/ResumeBuilder",
       image:
-        "https://sdmntprwestus2.oaiusercontent.com/files/00000000-d28c-61f8-b5f1-8f2b1da2e3f7/raw?se=2025-08-21T04%3A59%3A59Z&sp=r&sv=2024-08-04&sr=b&scid=dc35304e-b490-56ac-a12c-be29ce4ec03b&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-20T20%3A52%3A44Z&ske=2025-08-21T20%3A52%3A44Z&sks=b&skv=2024-08-04&sig=Yvg0PSlYJKjXMWThA6sgLZLcLyf4CHVnE12LqXd0DRM%3D", // Professional recruitment image
+        "https://img.freepik.com/premium-vector/job-profile-logo-resume-logo-template_658057-20.jpg", // Professional recruitment image
       description:
         "A comprehensive web application for users to create, manage, and share resumes efficiently.",
       features: [
