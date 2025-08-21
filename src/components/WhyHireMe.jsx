@@ -4,18 +4,13 @@ import { FaCode,FaBrain, FaUsers, FaLightbulb, FaRocket, FaDatabase, FaPuzzlePie
 
 const reasons = [
   { icon: FaCode, title: "Full-Stack Expertise", text: "Proficient in MERN Stack with a track record of delivering robust, scalable applications" },
-  { icon: FaDatabase, title: "Data-Driven Development", text: "Strong skills in JavaScript, Python, and SQL. Experienced in optimizing database performance and data structures" },
   { icon: FaUsers, title: "Collaborative Team Player", text: "Excellent communication skills with a history of successful cross-functional collaboration" },
   { icon: FaLightbulb, title: "Innovative Problem Solver", text: "Proven ability to tackle complex challenges with creative, efficient solutions" },
   { icon: FaRocket, title: "Rapid Learner & Adaptor", text: "Quick to master new technologies and methodologies, ensuring cutting-edge solutions" },
   { icon: FaPuzzlePiece, title: "Scalable Solution Architect", text: "Passionate about creating efficient, maintainable, and scalable code architectures" },
   { icon: FaChartLine, title: "Performance Optimizer", text: "Skilled at identifying and resolving bottlenecks to enhance application speed and efficiency" },
   { icon: FaShieldAlt, title: "Security-Conscious Developer", text: "Prioritize robust security practices in all stages of development to protect sensitive data" },
-  {
-    icon: FaBrain,
-    title: "AI & ML Enthusiast",
-    text: "Experienced in implementing machine learning solutions and integrating AI-powered features into applications"
-  }
+
 ];
 
 const fadeInUp = keyframes`
