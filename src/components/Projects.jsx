@@ -9,7 +9,7 @@ const projectCategories = {
       deployedLink:
         "https://hospital-food-management-nrajus-projects.vercel.app/",
       githubLink:
-        "https://github.com/NalagamdinniRaju/Hospital-Food-Management.git",
+        "https://github.com/ShivaBoya/HospitalFood",
       image:
         "https://img.freepik.com/premium-photo/nurse-medical-coat-is-holding-tray-with-breakfast_179755-5329.jpg?",
       description:
@@ -33,7 +33,7 @@ const projectCategories = {
     {
       name: "Nxt Trendz (E-Commerce Clone)",
       deployedLink: "https://nxttrendzrts.ccbp.tech/",
-      githubLink: "https://github.com/raviteja-salva/nxt_trendz_website",
+      githubLink: "https://github.com/ShivaBoya/Nxt_TrendeZ_Website",
       image:
         "https://th.bing.com/th/id/R.82ba779360b50f5c461e8592fb7473d1?rik=RcI3k0vhEbR%2fpg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fe-commerce-png-sell-your-products-and-services-online-1000.png&ehk=LZ2GD%2fGQ98UUOsXo6cKf4wz84A1wac5zM6LprYBb79A%3d&risl=&pid=ImgRaw&r=0",
       // description: "A secure, modern e-commerce platform inspired by Amazon and Flipkart, built with React JS.",
