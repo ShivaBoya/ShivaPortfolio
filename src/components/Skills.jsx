@@ -12,7 +12,7 @@ const skills = [
   /*{ name: 'Python', icon: FaPython, color: '#3776AB', },*/
   { name: 'MongoDB', icon: SiMongodb, color: '#47A248', },
   { name: 'Express', icon: SiExpress, color: '#ffffff',},
-  { name: 'SQL', icon: FaDatabase, color: '#4479A1', },
+  // { name: 'SQL', icon: FaDatabase, color: '#4479A1', },
   { name: 'Bootstrap', icon: SiBootstrap, color: '#7952B3', },
 ];
 
