@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
-import Home from './components/Home';
-import Contact from './components/Contact';
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
 //import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import WhyHireMe from './components/WhyHireMe';
-import Education from './components/Education';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import WhyHireMe from "./components/WhyHireMe";
+import Education from "./components/Education";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./App.css";
 
 const Container = styled.div`
   background-color: #0a0a0a;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   width: 100%;
   max-width: 100%;
@@ -35,7 +35,8 @@ const Nav = styled.nav`
   background-color: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  box-shadow: ${({ scrolled }) => (scrolled ? '0 4px 10px rgba(0, 0, 0, 0.2)' : 'none')};
+  box-shadow: ${({ scrolled }) =>
+    scrolled ? "0 4px 10px rgba(0, 0, 0, 0.2)" : "none"};
 `;
 
 const NavWrapper = styled.div`
@@ -45,7 +46,7 @@ const NavWrapper = styled.div`
   padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  
+
   @media (max-width: 768px) {
     padding: 1rem 0.5rem;
     width: 100%;
@@ -60,7 +61,7 @@ const Logo = styled.a`
   display: flex;
   align-items: center;
   animation: ${logoPulse} 2s infinite;
-  
+
   &:hover {
     color: #08b1a1;
   }
@@ -93,7 +94,7 @@ const NavLink = styled.a`
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 2px;
@@ -119,14 +120,14 @@ const MenuIcon = styled.div`
 
   @media (max-width: 768px) {
     display: block;
-    margin-right:30px;
+    margin-right: 30px;
   }
 `;
 
 const MobileMenu = styled.div`
   position: fixed;
   top: 0;
-  right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+  right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.95);
@@ -176,9 +177,9 @@ const App = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -192,46 +193,77 @@ const App = () => {
 
   return (
     <Container>
-    <Nav scrolled={scrolled}>
-      <NavWrapper>
-        <Logo href="#home">SB</Logo>
-        <NavLinks>
-          <NavLink href="#home">Home</NavLink>
-          <NavLink href="#education">Education</NavLink>
-          {/*<NavLink href="#experience">Experience</NavLink>*/}
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#why-hire-me">Work</NavLink>
-          <NavLink href="#contact">Contact</NavLink>
-        </NavLinks>
-        <MenuIcon onClick={toggleMobileMenu}>
-          <FaBars />
-        </MenuIcon>
-      </NavWrapper>
-    </Nav>
+      <Nav scrolled={scrolled}>
+        <NavWrapper>
+          <Logo href="#home">
+            <img
+              src="https://res.cloudinary.com/dumhixyxy/image/upload/ChatGPT_Image_Aug_21_2025_11_57_22_PM_dqam83"
+              alt="Logo"
+              style={{ width: "30px", height: "30px", objectFit: "contain" }}
+            />
+          </Logo>
 
-    <MobileMenu isOpen={mobileMenuOpen}>
-      <CloseIcon onClick={closeMobileMenu}>
-        <FaTimes />
-      </CloseIcon>
-      <MobileNavLink href="#home" onClick={closeMobileMenu}>Home</MobileNavLink>
-      <MobileNavLink href="#education" onClick={closeMobileMenu}>Education</MobileNavLink>
-      {/*<MobileNavLink href="#experience" onClick={closeMobileMenu}>Experience</MobileNavLink>*/}
-      <MobileNavLink href="#projects" onClick={closeMobileMenu}>Projects</MobileNavLink>
-      <MobileNavLink href="#skills" onClick={closeMobileMenu}>Skills</MobileNavLink>
-      <MobileNavLink href="#why-hire-me" onClick={closeMobileMenu}>Work</MobileNavLink>
-      <MobileNavLink href="#contact" onClick={closeMobileMenu}>Contact</MobileNavLink>
-    </MobileMenu>
+          <NavLinks>
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#education">Education</NavLink>
+            {/*<NavLink href="#experience">Experience</NavLink>*/}
+            <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#skills">Skills</NavLink>
+            <NavLink href="#why-hire-me">Work</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
+          </NavLinks>
+          <MenuIcon onClick={toggleMobileMenu}>
+            <FaBars />
+          </MenuIcon>
+        </NavWrapper>
+      </Nav>
 
-    <Section id="home"><Home /></Section>
-    <Section id="education"><Education /></Section>
-    {/*<Section id="experience"><Experience /></Section>*/}
-    <Section id="projects"><Projects /></Section>
-    <Section id="skills"><Skills /></Section>
-    <Section id="why-hire-me"><WhyHireMe /></Section>
-    <Section id="contact"><Contact /></Section>
-  </Container>
-);
+      <MobileMenu isOpen={mobileMenuOpen}>
+        <CloseIcon onClick={closeMobileMenu}>
+          <FaTimes />
+        </CloseIcon>
+        <MobileNavLink href="#home" onClick={closeMobileMenu}>
+          Home
+        </MobileNavLink>
+        <MobileNavLink href="#education" onClick={closeMobileMenu}>
+          Education
+        </MobileNavLink>
+        {/*<MobileNavLink href="#experience" onClick={closeMobileMenu}>Experience</MobileNavLink>*/}
+        <MobileNavLink href="#projects" onClick={closeMobileMenu}>
+          Projects
+        </MobileNavLink>
+        <MobileNavLink href="#skills" onClick={closeMobileMenu}>
+          Skills
+        </MobileNavLink>
+        <MobileNavLink href="#why-hire-me" onClick={closeMobileMenu}>
+          Work
+        </MobileNavLink>
+        <MobileNavLink href="#contact" onClick={closeMobileMenu}>
+          Contact
+        </MobileNavLink>
+      </MobileMenu>
+
+      <Section id="home">
+        <Home />
+      </Section>
+      <Section id="education">
+        <Education />
+      </Section>
+      {/*<Section id="experience"><Experience /></Section>*/}
+      <Section id="projects">
+        <Projects />
+      </Section>
+      <Section id="skills">
+        <Skills />
+      </Section>
+      <Section id="why-hire-me">
+        <WhyHireMe />
+      </Section>
+      <Section id="contact">
+        <Contact />
+      </Section>
+    </Container>
+  );
 };
 
 export default App;
