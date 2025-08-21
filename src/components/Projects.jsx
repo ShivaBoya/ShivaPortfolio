@@ -47,7 +47,7 @@ const projectCategories = {
       credentials: { username: "raja", password: "raja@2021" },
     },
     {
-      name: "Job Posting Recruiter Portal",
+      name: "ResumeBuilder Application",
       deployedLink: "https://resume-builder-krvx.vercel.app/",
       githubLink: "https://github.com/ShivaBoya/ResumeBuilder",
       image:
