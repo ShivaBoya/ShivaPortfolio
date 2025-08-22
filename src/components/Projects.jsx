@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-
+import { FaCertificate } from "react-icons/fa";
 const projectCategories = {
   fullStack: [
     {
       name: "Hospital Food Delivery Management System",
       deployedLink:
         "https://hospital-food-management-nrajus-projects.vercel.app/",
-      githubLink:
-        "https://github.com/ShivaBoya/HospitalFood",
+      githubLink: "https://github.com/ShivaBoya/HospitalFood",
       image:
         "https://img.freepik.com/premium-photo/nurse-medical-coat-is-holding-tray-with-breakfast_179755-5329.jpg?",
       description:
@@ -73,7 +72,30 @@ const projectCategories = {
       ],
     },
   ],
-  frontend: [],
+  frontend: [
+   {
+      name: "MemesHub",
+      deployedLink: "https://memeshub-project.netlify.app/",
+      githubLink: "https://github.com/ShivaBoya/MemesHub",
+      image:
+        "https://wallpapers.com/images/hd/hacker-with-fawkes-mask-3d-vj9n88v8vk2l1gcx.jpg",
+      description:
+        "A feature-rich web application where users can create, browse, and share memes seamlessly, with interactive features for likes, comments, and trending content.",
+      features: [
+        "Create, upload, and share memes with friends",
+        "Like, comment, and engage with trending memes",
+        "Mobile-responsive meme editor",
+        "Integrate payment using Razorpay for premium meme packs",
+        "Secure storage of user memes and profile data",
+      ],
+      technologies: ["HTML", "CSS", "JavaScript"],
+      certificate: {
+        link: "https://drive.google.com/file/d/1CdHDDdnlMXD_V_k1WTlx2l2zG-Z4Nsgg/view?usp=sharing",
+        label: "Certificate",
+        icon: <FaCertificate />,
+      },
+    },
+  ],
   backend: [],
 };
 
@@ -269,12 +291,11 @@ const Credentials = styled.div`
     }
   }
 `;
-
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("fullStack");
 
   const renderProjects = (category) => {
-    const categoryProjects = projectCategories[category];
+    const categoryProjects = projectCategories[category] || [];
 
     return (
       <ProjectsGrid>
@@ -291,6 +312,7 @@ const Projects = () => {
                   <TechTag key={i}>{tech}</TechTag>
                 ))}
               </TechStack>
+
               {project.credentials && (
                 <Credentials>
                   <p>
@@ -300,6 +322,7 @@ const Projects = () => {
                   </p>
                 </Credentials>
               )}
+
               <ProjectLinks>
                 <LinkButton
                   href={project.deployedLink}
@@ -316,8 +339,17 @@ const Projects = () => {
                 >
                   <FaGithub /> Code
                 </LinkButton>
+                {project.certificate && (
+                  <LinkButton
+                    href={project.certificate.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.certificate.icon} {project.certificate.label}
+                  </LinkButton>
+                )}
               </ProjectLinks>
-            </ProjectContent>{" "}
+            </ProjectContent>
           </ProjectCard>
         ))}
       </ProjectsGrid>

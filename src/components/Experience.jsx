@@ -1,12 +1,11 @@
-
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { 
-  FaBriefcase, 
-  FaCalendarAlt, 
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import {
+  FaBriefcase,
+  FaCalendarAlt,
   FaCertificate,
-  FaCheckCircle
-} from 'react-icons/fa';
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const fadeInUp = keyframes`
   from {
@@ -48,9 +47,9 @@ const SectionTitle = styled.h2`
   font-size: 3rem;
   margin-bottom: 4rem;
   position: relative;
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -89,7 +88,7 @@ const ExperienceCard = styled.div`
   border: 1px solid rgba(100, 255, 218, 0.1);
   backdrop-filter: blur(10px);
   animation: ${fadeInUp} 0.6s ease forwards;
-  
+
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
@@ -177,7 +176,7 @@ const AchievementItem = styled.li`
   align-items: center;
   color: #a8b2d1;
   margin-bottom: 0.75rem;
-  
+
   svg {
     color: #64ffda;
     margin-right: 0.75rem;
@@ -195,11 +194,11 @@ const CertificateLink = styled.a`
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  
+
   svg {
     margin-right: 0.5rem;
   }
-  
+
   &:hover {
     color: #fff;
     transform: scale(1.05);
@@ -210,35 +209,38 @@ const CertificateLink = styled.a`
   }
 `;
 
-
 const experiences = [
+  // {
+  //   company: "Aptitude Guru Hem",
+  //   position: "Fullstack Developer Intern",
+  //   period: "06/2024 - 09/2024",
+  //   current: true,
+  //   description:
+  //     "Developed an affiliate marketing site for the Admin portal and GST Management System using the MERN stack with a focus on efficient data handling and user experience. Managed project tasks via Jira, handled deployment, integrated team tasks, and conducted code reviews.",
+  //   achievements: [
+  //     "Ensured code quality, security, and maintainability using SonarQube for static analysis",
+  //     "Improved user experience through efficient data handling",
+  //     "Managed team collaboration and productivity by handling task integration and code reviews",
+  //   ],
+  //   certification:
+  //     "https://res.cloudinary.com/dwiq4s5ut/image/upload/v1731597421/Screenshot_2024-11-12_220411_iuja2s.png",
+  // },
   {
-    company: "Aptitude Guru Hem",
-    position: "Fullstack Developer Intern",
-    period: "06/2024 - 09/2024",
-    current: true,
-    description: "Developed an affiliate marketing site for the Admin portal and GST Management System using the MERN stack with a focus on efficient data handling and user experience. Managed project tasks via Jira, handled deployment, integrated team tasks, and conducted code reviews.",
-    achievements: [
-      "Ensured code quality, security, and maintainability using SonarQube for static analysis",
-      "Improved user experience through efficient data handling",
-      "Managed team collaboration and productivity by handling task integration and code reviews"
-    ],
-    certification: "https://res.cloudinary.com/dwiq4s5ut/image/upload/v1731597421/Screenshot_2024-11-12_220411_iuja2s.png"
-  },
-  {
-    company: "Sattva Infotech",
-    position: "Frontend Web Developer Intern",
-    period: "08/2023 – 10/2023",
+    company: "Masai",
+    position: "Masai Hackathon Edition",
+    period: "48 Hours",
     current: false,
-    description: "Developed responsive user interfaces and interactive front-end functionality for e-commerce and corporate website projects using modern web technologies.",
+    description:
+      "Developed responsive user interfaces and interactive front-end features for MemeHub, enabling users to create, browse, and engage with memes using HTML, CSS, and JavaScript.",
     achievements: [
-      "Implemented responsive interfaces using HTML, CSS, JavaScript, and React",
-      "Collaborated with cross-functional teams to translate business requirements into digital solutions",
-      "Gained comprehensive experience in front-end web development project lifecycle"
+      "Developed MemesHub, a responsive web application for creating, browsing, and sharing memes using HTML, CSS, and JavaScript",
+      "Implemented interactive features such as likes, comments, and trending content to enhance user engagement",
+      "Ensured responsive design and smooth user experience across devices",
     ],
-    certification: "https://res.cloudinary.com/dwiq4s5ut/image/upload/v1732129965/Sattava_Infotech_Certificate_wztvsx.jpg",
-    internId: "SIT-2023-0132"
-  }
+    certification:
+      "https://res.cloudinary.com/dumhixyxy/image/upload/Hack_fi28k6",
+    
+  },
 ];
 
 const Experience = () => (
@@ -257,7 +259,7 @@ const Experience = () => (
                 <Position>{exp.position}</Position>
               </CompanyInfo>
               {exp.certification && (
-                <CertificateLink 
+                <CertificateLink
                   href={exp.certification}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -267,14 +269,14 @@ const Experience = () => (
                 </CertificateLink>
               )}
             </CompanyHeader>
-            
+
             <Timeline>
-              <FaCalendarAlt style={{marginRight: '0.5rem'}} />
+              <FaCalendarAlt style={{ marginRight: "0.5rem" }} />
               {exp.period}
             </Timeline>
-            
+
             <Description>{exp.description}</Description>
-            
+
             <AchievementList>
               {exp.achievements.map((achievement, idx) => (
                 <AchievementItem key={idx}>
