@@ -246,7 +246,7 @@ const experiences = [
 const Experience = () => (
   <ExperienceSection id="experience">
     <Container>
-      <SectionTitle>Professional Journey</SectionTitle>
+      <SectionTitle>Certificates</SectionTitle>
       <ExperienceGrid>
         {experiences.map((exp, index) => (
           <ExperienceCard key={index}>
