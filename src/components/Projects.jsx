@@ -90,7 +90,7 @@ const projectCategories = {
       ],
       technologies: ["HTML", "CSS", "JavaScript"],
       certificate: {
-        link: "https://drive.google.com/file/d/1CdHDDdnlMXD_V_k1WTlx2l2zG-Z4Nsgg/view?usp=sharing",
+        link: "https://res.cloudinary.com/dumhixyxy/image/upload/Hack_fi28k6",
         label: "Certificate",
         icon: <FaCertificate />,
       },
