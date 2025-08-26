@@ -73,7 +73,7 @@ const projectCategories = {
     },
   ],
   frontend: [
-   {
+    {
       name: "MemesHub",
       deployedLink: "https://memeshub-project.netlify.app/",
       githubLink: "https://github.com/ShivaBoya/MemesHub",
@@ -94,6 +94,27 @@ const projectCategories = {
         label: "Certificate",
         icon: <FaCertificate />,
       },
+    },
+    {
+      name: "Meals Explorer Website",
+      deployedLink: "https://meals-explorer-web.vercel.app/",
+      githubLink: "https://github.com/ShivaBoya/MealsExplorer",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/6/62/South_Indian_non-veg_Meals.jpg", // Professional recruitment image
+      description:
+        "A comprehensive web application for users to discover, search, and explore meals with real-time suggestions, category filters, sorting, and paginated browsing.",
+      features: [
+        "Search and explore meals by name or ingredient",
+        "Filter meals by categories and cuisine types",
+        "Sort meals by popularity, rating, or preparation time",
+        "View detailed meal information with images and instructions",
+        "Save favorite meals for quick access",
+      ],
+      technologies: [
+        "HTML",
+        "Css",
+        "JavaScript"
+      ],
     },
   ],
   backend: [],
