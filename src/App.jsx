@@ -83,7 +83,7 @@ const NavLinks = styled.div`
 const NavLink = styled.a`
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #0dd3c5;
   text-decoration: none;
   position: relative;
   padding: 0.5rem 0;

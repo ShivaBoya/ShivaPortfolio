@@ -239,7 +239,23 @@ const experiences = [
     ],
     certification:
       "https://res.cloudinary.com/dumhixyxy/image/upload/Hack_fi28k6",
-    
+  },
+  {
+    company: "Python FullStack",
+    position: "Python Developer",
+    period: "Jul 2024 - Dec 2024",
+    current: false,
+    description:
+      "Built and deployed full-stack web applications using Python, Django/Flask, and modern front-end technologies, ensuring seamless integration between back-end APIs and responsive user interfaces.",
+    achievements: [
+      "Completed Python Full-Stack Development, covering both back-end (Django/Flask, REST APIs, authentication, database management) and front-end (HTML, CSS, JavaScript, React) technologies",
+      "Developed dynamic and responsive web applications with CRUD functionality, secure authentication, and RESTful API integrations",
+      "Implemented database solutions using MySQL/PostgreSQL and optimized queries for performance",
+      "Deployed full-stack applications on cloud platforms (Heroku/Render) with CI/CD pipelines for automated deployment",
+      "Collaborated on real-world projects demonstrating proficiency in both client-side and server-side development",
+    ],
+    certification:
+      "https://drive.google.com/file/d/1ZvrSxEuSU_tJuriCivXk3CdOCpXHEda-/view?usp=sharing",
   },
 ];
 
