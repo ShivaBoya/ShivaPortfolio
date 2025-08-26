@@ -63,7 +63,6 @@ const ContentWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     gap: 6rem;
-    wd
   }
 `;
 
@@ -210,7 +209,7 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Button = styled.a`
+const Button = styled.button`
   padding: 1rem 2rem;
   font-weight: 600;
   font-size: 1rem;
@@ -226,6 +225,7 @@ const Button = styled.a`
   text-decoration: none;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -288,6 +288,22 @@ const Home = () => {
     setIsVisible(true);
   }, []);
 
+  // 🔹 Function to open resume in new tab and download automatically
+  const handleResumeClick = () => {
+    const fileUrl = "/MyResume.pdf"; // Place file in public folder
+
+    // Open in new tab
+    window.open(fileUrl, "_blank");
+
+    // Trigger download
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "MyResume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <HomeContainer>
       <ContentWrapper>
@@ -320,20 +336,17 @@ const Home = () => {
               <FaServer /> Backend Developer
             </div>
           </TechStack>
+
           <ButtonContainer>
-            <Button
-              // href="https://drive.google.com/file/d/1HZu-XOFRsjm8p_e3wjSM749ENPd-BINw/view?usp=sharing"
-              // href="https://drive.google.com/file/d/1Dmk9XfjM5tz4CZ5TTmDXb38AtaQ7sjKA/view?usp=drive_link"
-              href="https://drive.google.com/file/d/1-ehgIOMapOJcCf_73RP1TKUDST35aTql/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              primary
-            >
-              View Resume <FaArrowRight />
+            <Button onClick={handleResumeClick} primary>
+              View & Download Resume <FaArrowRight />
             </Button>
-            <Button href="#projects">Explore Projects</Button>
+            <Button as="a" href="#projects">
+              Explore Projects
+            </Button>
           </ButtonContainer>
         </TextSection>
+
         <ImageContainer>
           <img
             src="https://res.cloudinary.com/dumhixyxy/image/upload/MyProfile01_mhsjmt"
@@ -346,4 +359,3 @@ const Home = () => {
 };
 
 export default Home;
-// https://res.cloudinary.com/dwiq4s5ut/image/upload/v1732218444/Profile_pic_jdz5zm.jpg

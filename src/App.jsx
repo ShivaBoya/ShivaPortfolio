@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
-import Experience from './components/Experience';
+import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import WhyHireMe from "./components/WhyHireMe";
@@ -112,6 +112,22 @@ const NavLink = styled.a`
   }
 `;
 
+const ResumeButton = styled.button`
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0dd3c5;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: #08b1a1;
+  }
+`;
+
 const MenuIcon = styled.div`
   display: none;
   cursor: pointer;
@@ -191,6 +207,20 @@ const App = () => {
     setMobileMenuOpen(false);
   };
 
+  // ✅ Function to open + download resume
+  const handleResumeClick = () => {
+    // open in new tab
+    window.open("/MyResume.pdf", "_blank");
+
+    // trigger download
+    const link = document.createElement("a");
+    link.href = "/MyResume.pdf";
+    link.download = "MyResume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <Container>
       <Nav scrolled={scrolled}>
@@ -211,6 +241,7 @@ const App = () => {
             <NavLink href="#skills">Skills</NavLink>
             <NavLink href="#why-hire-me">Work</NavLink>
             <NavLink href="#contact">Contact</NavLink>
+            <ResumeButton onClick={handleResumeClick}>Resume</ResumeButton>
           </NavLinks>
           <MenuIcon onClick={toggleMobileMenu}>
             <FaBars />
@@ -228,7 +259,9 @@ const App = () => {
         <MobileNavLink href="#education" onClick={closeMobileMenu}>
           Education
         </MobileNavLink>
-        <MobileNavLink href="#experience" onClick={closeMobileMenu}>Experience</MobileNavLink>
+        <MobileNavLink href="#experience" onClick={closeMobileMenu}>
+          Experience
+        </MobileNavLink>
         <MobileNavLink href="#projects" onClick={closeMobileMenu}>
           Projects
         </MobileNavLink>
@@ -241,6 +274,16 @@ const App = () => {
         <MobileNavLink href="#contact" onClick={closeMobileMenu}>
           Contact
         </MobileNavLink>
+        {/* Resume button in mobile */}
+        <MobileNavLink
+          as="button"
+          onClick={() => {
+            handleResumeClick();
+            closeMobileMenu();
+          }}
+        >
+          Resume
+        </MobileNavLink>
       </MobileMenu>
 
       <Section id="home">
@@ -249,7 +292,9 @@ const App = () => {
       <Section id="education">
         <Education />
       </Section>
-      <Section id="experience"><Experience /></Section>
+      <Section id="experience">
+        <Experience />
+      </Section>
       <Section id="projects">
         <Projects />
       </Section>

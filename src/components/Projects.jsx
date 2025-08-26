@@ -12,7 +12,7 @@ const projectCategories = {
       image:
         "https://img.freepik.com/premium-photo/nurse-medical-coat-is-holding-tray-with-breakfast_179755-5329.jpg?",
       description:
-        "A full-stack application for managing hospital meal deliveries, patient diets, and real-time order tracking.",
+        "A full-stack application for managing hospital meal deliveries, patient diets, and real-time order tracking.Role-based dashboards for hospital managers, pantry staff, and delivery personnel.Real-time meal tracking with WebSocket integration",
       features: [
         "Role-based dashboards for hospital managers, pantry staff, and delivery personnel",
         "Real-time meal tracking with WebSocket integration",
@@ -35,7 +35,8 @@ const projectCategories = {
       githubLink: "https://github.com/ShivaBoya/Nxt_TrendeZ_Website",
       image:
         "https://th.bing.com/th/id/R.82ba779360b50f5c461e8592fb7473d1?rik=RcI3k0vhEbR%2fpg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fe-commerce-png-sell-your-products-and-services-online-1000.png&ehk=LZ2GD%2fGQ98UUOsXo6cKf4wz84A1wac5zM6LprYBb79A%3d&risl=&pid=ImgRaw&r=0",
-      // description: "A secure, modern e-commerce platform inspired by Amazon and Flipkart, built with React JS.",
+      description:
+        "A secure, modern e-commerce platform inspired by Amazon and Flipkart, built with React JS.JWT authentication for secure user sessions.REST API integration for dynamic product data",
       features: [
         "JWT authentication for secure user sessions",
         "REST API integration for dynamic product data",
@@ -52,7 +53,7 @@ const projectCategories = {
       image:
         "https://img.freepik.com/premium-vector/job-profile-logo-resume-logo-template_658057-20.jpg", // Professional recruitment image
       description:
-        "A comprehensive web application for users to create, manage, and share resumes efficiently.",
+        "A comprehensive web application for users to create, manage, and share resumes efficiently.Create, update, and download resumes as PDF.Send resumes via email to recruiters",
       features: [
         "Create, update, and download resumes as PDF",
         "Send resumes via email to recruiters",
@@ -80,7 +81,7 @@ const projectCategories = {
       image:
         "https://wallpapers.com/images/hd/hacker-with-fawkes-mask-3d-vj9n88v8vk2l1gcx.jpg",
       description:
-        "A feature-rich web application where users can create, browse, and share memes seamlessly, with interactive features for likes, comments, and trending content.",
+        "A feature-rich web application where users can create, browse, and share memes seamlessly, with interactive features for likes, comments, and trending content.Create, upload, and share memes with friends.Like, comment, and engage with trending memes.Mobile-responsive meme editor",
       features: [
         "Create, upload, and share memes with friends",
         "Like, comment, and engage with trending memes",
@@ -102,7 +103,7 @@ const projectCategories = {
       image:
         "https://upload.wikimedia.org/wikipedia/commons/6/62/South_Indian_non-veg_Meals.jpg", // Professional recruitment image
       description:
-        "A comprehensive web application for users to discover, search, and explore meals with real-time suggestions, category filters, sorting, and paginated browsing.",
+        "A comprehensive web application for users to discover, search, and explore meals with real-time suggestions, category filters, sorting, and paginated browsing.Search and explore meals by name or ingredient.Filter meals by categories and cuisine types.View detailed meal information with images and instructions.Save favorite meals for quick access",
       features: [
         "Search and explore meals by name or ingredient",
         "Filter meals by categories and cuisine types",
@@ -110,11 +111,7 @@ const projectCategories = {
         "View detailed meal information with images and instructions",
         "Save favorite meals for quick access",
       ],
-      technologies: [
-        "HTML",
-        "Css",
-        "JavaScript"
-      ],
+      technologies: ["HTML", "Css", "JavaScript"],
     },
   ],
   backend: [],
