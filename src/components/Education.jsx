@@ -232,6 +232,18 @@ const StatusBadge = styled.span`
 const Education = () => {
   const educationData = [
     {
+      degree: "Full-Stack Web Development",
+      institution: "Masai School",
+      location: " Bengaluru, India",
+      duration: "02/2025 - 08/2025",
+      details: [
+        "Core Computer Science fundamentals",
+        "Advanced Mathematics and Physics",
+        "Software Development Principles",
+        "Data Structures and Algorithms"
+      ]
+    },
+    {
       degree: "BSc Computer Science (MPCs)",
       institution: "Rao's Degree College",
       location: "Kurnool, AP",

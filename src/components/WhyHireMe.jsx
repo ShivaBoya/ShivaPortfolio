@@ -1,16 +1,59 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { FaCode,FaBrain, FaUsers, FaLightbulb, FaRocket, FaDatabase, FaPuzzlePiece, FaChartLine, FaShieldAlt } from 'react-icons/fa';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import {
+  FaCode,
+  FaBrain,
+  FaUsers,
+  FaLightbulb,
+  FaRocket,
+  FaDatabase,
+  FaPuzzlePiece,
+  FaChartLine,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 const reasons = [
-  { icon: FaCode, title: "Full-Stack Expertise", text: "Proficient in MERN Stack with a track record of delivering robust, scalable applications" },
-  { icon: FaUsers, title: "Collaborative Team Player", text: "Excellent communication skills with a history of successful cross-functional collaboration" },
-  { icon: FaLightbulb, title: "Innovative Problem Solver", text: "Proven ability to tackle complex challenges with creative, efficient solutions" },
-  { icon: FaRocket, title: "Rapid Learner & Adaptor", text: "Quick to master new technologies and methodologies, ensuring cutting-edge solutions" },
-  { icon: FaPuzzlePiece, title: "Scalable Solution Architect", text: "Passionate about creating efficient, maintainable, and scalable code architectures" },
-  { icon: FaChartLine, title: "Performance Optimizer", text: "Skilled at identifying and resolving bottlenecks to enhance application speed and efficiency" },
-  { icon: FaShieldAlt, title: "Security-Conscious Developer", text: "Prioritize robust security practices in all stages of development to protect sensitive data" },
+  {
+    icon: FaCode,
+    title: "Full-Stack Expertise",
+    text: "Proficient in MERN Stack with a track record of delivering robust, scalable applications",
+  },
+  {
+    icon: FaLightbulb,
+    title: "Core Skills",
+    text: "Data Structures & Algorithms, OOPs Concepts, Analytical Skills, Problem-Solving, System Design Basics, Debugging & Optimization",
+  },
 
+  {
+    icon: FaUsers,
+    title: "Collaborative Team Player",
+    text: "Excellent communication skills with a history of successful cross-functional collaboration",
+  },
+  {
+    icon: FaLightbulb,
+    title: "Innovative Problem Solver",
+    text: "Proven ability to tackle complex challenges with creative, efficient solutions",
+  },
+  {
+    icon: FaRocket,
+    title: "Rapid Learner & Adaptor",
+    text: "Quick to master new technologies and methodologies, ensuring cutting-edge solutions",
+  },
+  {
+    icon: FaPuzzlePiece,
+    title: "Scalable Solution Architect",
+    text: "Passionate about creating efficient, maintainable, and scalable code architectures",
+  },
+  {
+    icon: FaChartLine,
+    title: "Performance Optimizer",
+    text: "Skilled at identifying and resolving bottlenecks to enhance application speed and efficiency",
+  },
+  {
+    icon: FaShieldAlt,
+    title: "Security-Conscious Developer",
+    text: "Prioritize robust security practices in all stages of development to protect sensitive data",
+  },
 ];
 
 const fadeInUp = keyframes`
@@ -32,7 +75,7 @@ const Container = styled.section`
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
-    margin-right:60px;
+    margin-right: 60px;
   }
 `;
 
@@ -45,7 +88,7 @@ const Title = styled.h2`
   position: relative;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -85,7 +128,7 @@ const Grid = styled.div`
 const ReasonCard = styled.div`
   opacity: 0;
   animation: ${fadeInUp} 0.5s ease-out forwards;
-  animation-delay: ${props => props.index * 0.2}s;
+  animation-delay: ${(props) => props.index * 0.2}s;
   background: rgba(100, 255, 218, 0.03);
   border: 1px solid rgba(100, 255, 218, 0.1);
   border-radius: 12px;
@@ -101,7 +144,7 @@ const ReasonCard = styled.div`
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
