@@ -113,6 +113,19 @@ const projectCategories = {
       ],
       technologies: ["HTML", "Css", "JavaScript"],
     },
+    {
+      name: "Movie Explorer Website",
+      deployedLink: "https://movie-explorer-two-beta.vercel.app/",
+      githubLink: "https://github.com/ShivaBoya/RevisionUnit/tree/main/sprint1/Contest/MovieExplorer",
+      image:
+        "https://i.ytimg.com/vi/n5Qh7vSReiM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDumlQPZ6cai1t1s4mhCZX8qWd5_g", // Professional recruitment image
+      description:
+        "A comprehensive web application for users to discover, search, and explore movies with real-time suggestions, year and language filters, sorting, and paginated browsing.",
+      features: [
+        
+      ],
+      technologies: ["React","HTML", "Tailwind CSS", "JavaScript"],
+    },
   ],
   backend: [],
 };
