@@ -290,7 +290,7 @@ const Home = () => {
 
   // 🔹 Function to open resume in new tab and download automatically
   const handleResumeClick = () => {
-    const fileUrl = "/MyResume.pdf"; // Place file in public folder
+    const fileUrl = "/BoyaShiva_Resume.pdf"; // Place file in public folder
 
     // Open in new tab
     window.open(fileUrl, "_blank");
@@ -298,7 +298,7 @@ const Home = () => {
     // Trigger download
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = "MyResume.pdf";
+    link.download = "BoyaShiva_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
