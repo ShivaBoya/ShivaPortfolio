@@ -72,6 +72,37 @@ const projectCategories = {
         "Tailwind CSS",
       ],
     },
+    {
+      name: "StudyGenie AI-Powered Study Companion",
+      deployedLink: "https://study-genie-ai-shiva-project.vercel.app/",
+      githubLink: "https://github.com/ShivaBoya/StudyGenie-AI",
+      image:
+        "https://sdmntpreastus.oaiusercontent.com/files/00000000-b088-61f9-ab29-8e20a023e90b/raw?se=2025-10-12T19%3A23%3A21Z&sp=r&sv=2024-08-04&sr=b&scid=923307d0-c0b0-5709-a263-a114d1d3dfd9&skoid=9063adf3-a524-4acf-b70a-8731b33f2f50&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-11T23%3A25%3A58Z&ske=2025-10-12T23%3A25%3A58Z&sks=b&skv=2024-08-04&sig=3qwbtNfR1d4LXQTMte0yjgJQk9rV%2BrDHaabcJvRcr3s%3D", // Professional recruitment image
+      description:
+        "Built Study Genie, a responsive Vite + React web app with interactive tools, personalized study plans, and seamless UI/UX for an efficient learning experience across all devices.",
+      features: [
+        "Built Study Genie, a responsive learning web app using Vite + React",
+
+        "Added AI-generated study plans, quizzes, and flashcards for personalized learning",
+
+        "Integrated Razorpay for secure premium feature payments",
+
+        "Implemented modular components and efficient state management for scalability",
+
+        "Focused on a seamless, mobile-friendly UI/UX for smooth user experience",
+      ],
+      technologies: [
+        "React JS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT",
+        "Razorpay",
+        "Toast notifications",
+        "Tailwind CSS",
+        "AI"
+      ],
+    },
   ],
   frontend: [
     {
@@ -116,15 +147,14 @@ const projectCategories = {
     {
       name: "Movie Explorer Website",
       deployedLink: "https://movie-explorer-two-beta.vercel.app/",
-      githubLink: "https://github.com/ShivaBoya/RevisionUnit/tree/main/sprint1/Contest/MovieExplorer",
+      githubLink:
+        "https://github.com/ShivaBoya/RevisionUnit/tree/main/sprint1/Contest/MovieExplorer",
       image:
         "https://i.ytimg.com/vi/n5Qh7vSReiM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDumlQPZ6cai1t1s4mhCZX8qWd5_g", // Professional recruitment image
       description:
         "A comprehensive web application for users to discover, search, and explore movies with real-time suggestions, year and language filters, sorting, and paginated browsing.",
-      features: [
-        
-      ],
-      technologies: ["React","HTML", "Tailwind CSS", "JavaScript"],
+      features: [],
+      technologies: ["React", "HTML", "Tailwind CSS", "JavaScript"],
     },
   ],
   backend: [],
