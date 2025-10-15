@@ -77,7 +77,7 @@ const projectCategories = {
       deployedLink: "https://study-genie-ai-shiva-project.vercel.app/",
       githubLink: "https://github.com/ShivaBoya/StudyGenie-AI",
       image:
-        "https://sdmntpreastus.oaiusercontent.com/files/00000000-b088-61f9-ab29-8e20a023e90b/raw?se=2025-10-12T19%3A23%3A21Z&sp=r&sv=2024-08-04&sr=b&scid=923307d0-c0b0-5709-a263-a114d1d3dfd9&skoid=9063adf3-a524-4acf-b70a-8731b33f2f50&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-10-11T23%3A25%3A58Z&ske=2025-10-12T23%3A25%3A58Z&sks=b&skv=2024-08-04&sig=3qwbtNfR1d4LXQTMte0yjgJQk9rV%2BrDHaabcJvRcr3s%3D", // Professional recruitment image
+        "https://framerusercontent.com/images/RNiieHXgiDKjsvl6fDhNyKzvQE.png?width=1456&height=816", // Professional recruitment image
       description:
         "Built Study Genie, a responsive Vite + React web app with interactive tools, personalized study plans, and seamless UI/UX for an efficient learning experience across all devices.",
       features: [
