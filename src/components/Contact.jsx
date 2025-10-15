@@ -421,11 +421,17 @@
 //     </Container>
 //   );
 // }
-import React from "react";
+
+
+
+import React, { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { FaEnvelope, FaLinkedin, FaGithub, FaPaperPlane } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
-// Reuse shimmer effect for consistency
+// Background shimmer animation
 const shimmer = keyframes`
   0% { background-position: -1000px 0; }
   100% { background-position: 1000px 0; }
@@ -464,21 +470,21 @@ const Container = styled.div`
   z-index: 1;
 
   @media (min-width: 768px) {
-    grid-template-columns: 1.2fr 0.8fr; /* form left, info right */
+    grid-template-columns: 1.2fr 0.8fr;
   }
 `;
 
 const Box = styled.div`
-  background-color: #1f2937; /* gray-800 */
+  background-color: #1f2937;
   padding: 2rem;
   border-radius: 1rem;
-  border: 1px solid #374151; /* border for separation */
+  border: 1px solid #374151;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease;
 
   &:hover {
     border-color: #14b8a6;
     box-shadow: 0 0 15px rgba(20, 184, 166, 0.3);
-    transition: 0.3s ease;
   }
 `;
 
@@ -531,7 +537,7 @@ const Heading = styled.h2`
 `;
 
 const Input = styled.input`
-  padding: 1rem; /* increased height */
+  padding: 1rem;
   border-radius: 0.5rem;
   background-color: #374151;
   border: 1px solid #4b5563;
@@ -553,7 +559,7 @@ const TextArea = styled.textarea`
   border: 1px solid #4b5563;
   color: white;
   outline: none;
-  min-height: 150px; /* slightly bigger */
+  min-height: 150px;
   resize: vertical;
   font-size: 1rem;
   transition: 0.3s ease;
@@ -588,30 +594,61 @@ const Button = styled.button`
   svg {
     font-size: 1.2rem;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 `;
 
 const Contact = () => {
+  const formRef = useRef();
+  const [isSending, setIsSending] = useState(false);
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    try {
+      await emailjs.sendForm(
+        "service_w5dpy34",   // Your EmailJS Service ID
+        "template_nhtph3j",  // Your Template ID
+        formRef.current,
+        "MX9SA7rk-Puvdk0mS" // Your Public Key
+      );
+
+      toast.success("✅ Message sent successfully!");
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("❌ Failed to send message. Check your EmailJS setup.");
+    } finally {
+      setIsSending(false);
+    }
+  };
+
   return (
-    <Section>
+    <Section id="contact">
       <Container>
-        {/* Left: Contact Form */}
+        {/* Left — Contact Form */}
         <Box>
-          <Form>
+          <Form ref={formRef} onSubmit={sendEmail}>
             <Heading>
               Contact <span>Me</span>
             </Heading>
 
-            <Input type="text" placeholder="Name" required />
-            <Input type="email" placeholder="Email" required />
-            <TextArea placeholder="Message" required />
+            <Input type="text" name="user_name" placeholder="Your Name" required />
+            <Input type="email" name="user_email" placeholder="Your Email" required />
+            <TextArea name="message" placeholder="Your Message" required />
 
-            <Button type="submit">
-              <FaPaperPlane /> Send Message
+            <Button type="submit" disabled={isSending}>
+              <FaPaperPlane />
+              {isSending ? "Sending..." : "Send Message"}
             </Button>
           </Form>
         </Box>
 
-        {/* Right: Contact Info */}
+        {/* Right — Contact Info */}
         <Box>
           <Title>Get in Touch</Title>
 
@@ -643,6 +680,8 @@ const Contact = () => {
           </Detail>
         </Box>
       </Container>
+
+      <ToastContainer position="bottom-right" autoClose={3000} theme="dark" />
     </Section>
   );
 };
