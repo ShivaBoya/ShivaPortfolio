@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { FaCertificate } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaCertificate } from "react-icons/fa";
+
 const projectCategories = {
   fullStack: [
     {
@@ -12,7 +12,7 @@ const projectCategories = {
       image:
         "https://img.freepik.com/premium-photo/nurse-medical-coat-is-holding-tray-with-breakfast_179755-5329.jpg?",
       description:
-        "A full-stack application for managing hospital meal deliveries, patient diets, and real-time order tracking.Role-based dashboards for hospital managers, pantry staff, and delivery personnel.Real-time meal tracking with WebSocket integration",
+        "A full-stack app for managing hospital meal deliveries, patient diets, and real-time order tracking with role-based dashboards.",
       features: [
         "Role-based dashboards for hospital managers, pantry staff, and delivery personnel",
         "Real-time meal tracking with WebSocket integration",
@@ -28,7 +28,6 @@ const projectCategories = {
         "WebSocket",
       ],
     },
-
     {
       name: "Nxt Trendz (E-Commerce Clone)",
       deployedLink: "https://nxttrendzrts.ccbp.tech/",
@@ -36,12 +35,12 @@ const projectCategories = {
       image:
         "https://th.bing.com/th/id/R.82ba779360b50f5c461e8592fb7473d1?rik=RcI3k0vhEbR%2fpg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fe-commerce-png-sell-your-products-and-services-online-1000.png&ehk=LZ2GD%2fGQ98UUOsXo6cKf4wz84A1wac5zM6LprYBb79A%3d&risl=&pid=ImgRaw&r=0",
       description:
-        "A secure, modern e-commerce platform inspired by Amazon and Flipkart, built with React JS.JWT authentication for secure user sessions.REST API integration for dynamic product data",
+        "A secure, modern e-commerce platform inspired by Amazon and Flipkart with JWT authentication and dynamic product APIs.",
       features: [
-        "JWT authentication for secure user sessions",
-        "REST API integration for dynamic product data",
-        "Responsive design for seamless mobile and desktop experience",
-        "Product search, filtering, and sorting functionalities",
+        "JWT authentication for secure sessions",
+        "Dynamic product data via REST API",
+        "Responsive design for all devices",
+        "Product search, filtering, and sorting",
       ],
       technologies: ["React JS", "Node.js", "Express", "MongoDB", "JWT"],
       credentials: { username: "raja", password: "raja@2021" },
@@ -51,15 +50,14 @@ const projectCategories = {
       deployedLink: "https://resume-builder-krvx.vercel.app/",
       githubLink: "https://github.com/ShivaBoya/ResumeBuilder",
       image:
-        "https://img.freepik.com/premium-vector/job-profile-logo-resume-logo-template_658057-20.jpg", // Professional recruitment image
+        "https://img.freepik.com/premium-vector/job-profile-logo-resume-logo-template_658057-20.jpg",
       description:
-        "A comprehensive web application for users to create, manage, and share resumes efficiently.Create, update, and download resumes as PDF.Send resumes via email to recruiters",
+        "A full-stack app that allows users to create, manage, and download resumes as PDFs with Razorpay integration for premium features.",
       features: [
         "Create, update, and download resumes as PDF",
-        "Send resumes via email to recruiters",
-        "Mobile-responsive resume editor",
-        "Integrate payment using Razorpay for premium features",
-        "Secure storage of user resumes and data",
+        "Send resumes via email",
+        "Responsive resume editor",
+        "Razorpay payment integration",
       ],
       technologies: [
         "React JS",
@@ -68,7 +66,6 @@ const projectCategories = {
         "MongoDB",
         "JWT",
         "Razorpay",
-        "Toast notifications",
         "Tailwind CSS",
       ],
     },
@@ -77,19 +74,14 @@ const projectCategories = {
       deployedLink: "https://study-genie-ai-shiva-project.vercel.app/",
       githubLink: "https://github.com/ShivaBoya/StudyGenie-AI",
       image:
-        "https://framerusercontent.com/images/RNiieHXgiDKjsvl6fDhNyKzvQE.png?width=1456&height=816", // Professional recruitment image
+        "https://framerusercontent.com/images/RNiieHXgiDKjsvl6fDhNyKzvQE.png?width=1456&height=816",
       description:
-        "Built Study Genie, a responsive Vite + React web app with interactive tools, personalized study plans, and seamless UI/UX for an efficient learning experience across all devices.",
+        "An AI-powered Vite + React study companion offering personalized learning tools, flashcards, and quizzes with Razorpay integration.",
       features: [
-        "Built Study Genie, a responsive learning web app using Vite + React",
-
-        "Added AI-generated study plans, quizzes, and flashcards for personalized learning",
-
-        "Integrated Razorpay for secure premium feature payments",
-
-        "Implemented modular components and efficient state management for scalability",
-
-        "Focused on a seamless, mobile-friendly UI/UX for smooth user experience",
+        "AI-generated study plans, quizzes, and flashcards",
+        "Razorpay for premium feature payments",
+        "Modular and scalable component design",
+        "Mobile-friendly UI/UX",
       ],
       technologies: [
         "React JS",
@@ -98,9 +90,8 @@ const projectCategories = {
         "MongoDB",
         "JWT",
         "Razorpay",
-        "Toast notifications",
         "Tailwind CSS",
-        "AI"
+        "AI",
       ],
     },
   ],
@@ -112,13 +103,11 @@ const projectCategories = {
       image:
         "https://wallpapers.com/images/hd/hacker-with-fawkes-mask-3d-vj9n88v8vk2l1gcx.jpg",
       description:
-        "A feature-rich web application where users can create, browse, and share memes seamlessly, with interactive features for likes, comments, and trending content.Create, upload, and share memes with friends.Like, comment, and engage with trending memes.Mobile-responsive meme editor",
+        "A feature-rich meme sharing platform with interactive features for likes, comments, and trending content.",
       features: [
-        "Create, upload, and share memes with friends",
-        "Like, comment, and engage with trending memes",
-        "Mobile-responsive meme editor",
-        "Integrate payment using Razorpay for premium meme packs",
-        "Secure storage of user memes and profile data",
+        "Create, upload, and share memes",
+        "Like and comment system",
+        "Responsive meme editor",
       ],
       technologies: ["HTML", "CSS", "JavaScript"],
       certificate: {
@@ -132,17 +121,15 @@ const projectCategories = {
       deployedLink: "https://meals-explorer-web.vercel.app/",
       githubLink: "https://github.com/ShivaBoya/MealsExplorer",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/6/62/South_Indian_non-veg_Meals.jpg", // Professional recruitment image
+        "https://upload.wikimedia.org/wikipedia/commons/6/62/South_Indian_non-veg_Meals.jpg",
       description:
-        "A comprehensive web application for users to discover, search, and explore meals with real-time suggestions, category filters, sorting, and paginated browsing.Search and explore meals by name or ingredient.Filter meals by categories and cuisine types.View detailed meal information with images and instructions.Save favorite meals for quick access",
+        "An app for exploring meals with search, filter, and sorting options powered by TheMealDB API.",
       features: [
-        "Search and explore meals by name or ingredient",
-        "Filter meals by categories and cuisine types",
-        "Sort meals by popularity, rating, or preparation time",
-        "View detailed meal information with images and instructions",
-        "Save favorite meals for quick access",
+        "Search meals by name or ingredient",
+        "Filter and sort by category",
+        "Paginated browsing",
       ],
-      technologies: ["HTML", "Css", "JavaScript"],
+      technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
       name: "Movie Explorer Website",
@@ -150,45 +137,39 @@ const projectCategories = {
       githubLink:
         "https://github.com/ShivaBoya/RevisionUnit/tree/main/sprint1/Contest/MovieExplorer",
       image:
-        "https://i.ytimg.com/vi/n5Qh7vSReiM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDumlQPZ6cai1t1s4mhCZX8qWd5_g", // Professional recruitment image
+        "https://i.ytimg.com/vi/n5Qh7vSReiM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDumlQPZ6cai1t1s4mhCZX8qWd5_g",
       description:
-        "A comprehensive web application for users to discover, search, and explore movies with real-time suggestions, year and language filters, sorting, and paginated browsing.",
+        "A React-based movie discovery app with search, filters, and pagination for browsing films efficiently.",
       features: [],
-      technologies: ["React", "HTML", "Tailwind CSS", "JavaScript"],
+      technologies: ["React", "Tailwind CSS", "JavaScript"],
     },
   ],
   backend: [],
 };
 
 const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 `;
 
 const Container = styled.section`
-  padding: 1rem 2rem;
+  padding: 0 2rem 2rem 2rem; /* Removed top space */
   background: transparent;
   min-height: 100vh;
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
   color: #64ffda;
-  margin-bottom: 4rem;
+  margin: 1rem 0 3rem 0; /* reduced top margin */
   position: relative;
 
   &::after {
     content: "";
     position: absolute;
-    bottom: -12px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 120px;
@@ -218,21 +199,16 @@ const NavButton = styled.button`
     background: rgba(100, 255, 218, 0.2);
   }
 `;
+
 const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 const ProjectCard = styled.article`
-  position: relative;
   background: rgba(17, 34, 64, 0.8);
   border-radius: 0.8rem;
   overflow: hidden;
@@ -242,7 +218,7 @@ const ProjectCard = styled.article`
   animation: ${fadeIn} 0.6s ease-out forwards;
   animation-delay: ${(props) => props.$index * 0.2}s;
   opacity: 0;
-  height: 420px; // Reduced height
+  height: 420px;
   display: flex;
   flex-direction: column;
 
@@ -254,9 +230,8 @@ const ProjectCard = styled.article`
 `;
 
 const ProjectImage = styled.div`
-  position: relative;
   width: 100%;
-  height: 150px; // Reduced height
+  height: 150px;
   overflow: hidden;
 
   img {
@@ -282,7 +257,6 @@ const ProjectTitle = styled.h3`
   font-size: 1.2rem;
   color: #e6f1ff;
   margin-bottom: 0.75rem;
-  font-weight: 600;
 `;
 
 const ProjectDescription = styled.p`
@@ -306,14 +280,12 @@ const TechTag = styled.span`
   padding: 0.25rem 0.5rem;
   border-radius: 99px;
   font-size: 0.6rem;
-  font-weight: 500;
 `;
 
 const ProjectLinks = styled.div`
   display: flex;
   gap: 0.5rem;
   margin-top: auto;
-  padding-top: 0.5rem;
 `;
 
 const LinkButton = styled.a`
@@ -324,11 +296,11 @@ const LinkButton = styled.a`
   border-radius: 99px;
   font-size: 0.7rem;
   text-decoration: none;
-  transition: all 0.3s ease;
   background: ${(props) =>
     props.$primary ? "rgba(100, 255, 218, 0.1)" : "transparent"};
   color: #64ffda;
   border: 1px solid rgba(100, 255, 218, 0.3);
+  transition: all 0.3s ease;
 
   svg {
     font-size: 0.7rem;
@@ -352,12 +324,12 @@ const Credentials = styled.div`
     }
   }
 `;
+
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("fullStack");
 
   const renderProjects = (category) => {
     const categoryProjects = projectCategories[category] || [];
-
     return (
       <ProjectsGrid>
         {categoryProjects.map((project, index) => (
