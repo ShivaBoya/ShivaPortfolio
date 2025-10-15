@@ -29,10 +29,11 @@ const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 70vh;
+  min-height: 60vh; /* ↓ Reduced from 70vh to 60vh */
   background-color: transparent;
   position: relative;
   overflow: hidden;
+
   &::before {
     content: "";
     position: absolute;
@@ -200,7 +201,7 @@ const ButtonContainer = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-top: 2.5rem;
+  margin-top: 2rem; /* ↓ slightly reduced */
   opacity: 0;
   animation: ${fadeInUp} 0.5s ease-out 1s forwards;
 
@@ -254,33 +255,6 @@ const Button = styled.button`
   }
 `;
 
-const SocialLinks = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 3rem;
-  opacity: 0;
-  animation: ${fadeInUp} 0.5s ease-out 1.2s forwards;
-
-  a {
-    font-size: 1.75rem;
-    color: #cbd5e1;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(100, 255, 218, 0.1);
-
-    &:hover {
-      color: #64ffda;
-      transform: translateY(-3px);
-      background: rgba(100, 255, 218, 0.2);
-    }
-  }
-`;
-
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -288,14 +262,10 @@ const Home = () => {
     setIsVisible(true);
   }, []);
 
-  // 🔹 Function to open resume in new tab and download automatically
   const handleResumeClick = () => {
-    const fileUrl = "/BoyaShiva_Resume.pdf"; // Place file in public folder
-
-    // Open in new tab
+    const fileUrl = "/BoyaShiva_Resume.pdf";
     window.open(fileUrl, "_blank");
 
-    // Trigger download
     const link = document.createElement("a");
     link.href = fileUrl;
     link.download = "BoyaShiva_Resume.pdf";

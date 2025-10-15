@@ -10,7 +10,7 @@ import {
 const fadeInUp = keyframes`
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -19,23 +19,22 @@ const fadeInUp = keyframes`
 `;
 
 const ExperienceSection = styled.section`
-  padding: 0rem 2rem;
-  min-height: 100vh;
+  padding: 1rem 2rem; /* Minimal padding at top */
+  min-height: 65vh; /* Reduced height */
   position: relative;
   overflow: hidden;
 
   @media (max-width: 768px) {
-    padding: 0rem 1rem;
+    padding: 1rem 1rem;
     min-height: auto;
   }
 `;
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
-
   @media (max-width: 768px) {
     padding: 0 0.5rem;
   }
@@ -44,58 +43,53 @@ const Container = styled.div`
 const SectionTitle = styled.h2`
   text-align: center;
   color: #64ffda;
-  font-size: 3rem;
-  margin-bottom: 4rem;
+  font-size: 2.4rem;
+  margin-bottom: 2rem; /* Reduced spacing below title */
+  margin-top: 0; /* No extra space above */
   position: relative;
 
   &::after {
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: -6px;
     left: 50%;
     transform: translateX(-50%);
-    width: 150px;
-    height: 4px;
+    width: 100px;
+    height: 3px;
     background: linear-gradient(90deg, transparent, #64ffda, transparent);
   }
 
   @media (max-width: 768px) {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-
-    &::after {
-      width: 100px;
-    }
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
 const ExperienceGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-
+  gap: 1.2rem; /* Reduced gap */
   @media (max-width: 768px) {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 `;
 
 const ExperienceCard = styled.div`
   background: rgba(23, 34, 52, 0.7);
-  border-radius: 15px;
-  padding: 2.5rem;
-  position: relative;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 1.6rem;
   border: 1px solid rgba(100, 255, 218, 0.1);
   backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
   animation: ${fadeInUp} 0.6s ease forwards;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   }
 
   @media (max-width: 768px) {
-    padding: 1.5rem;
+    padding: 1.1rem;
     border-radius: 10px;
   }
 `;
@@ -104,13 +98,12 @@ const CompanyHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.6rem;
   }
 `;
 
@@ -122,24 +115,24 @@ const CompanyInfo = styled.div`
 
 const Company = styled.h3`
   color: #64ffda;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
 const Position = styled.h4`
   color: #fff;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
 
   @media (max-width: 768px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 
@@ -147,22 +140,22 @@ const Timeline = styled.div`
   display: flex;
   align-items: center;
   color: #8892b0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
   }
 `;
 
 const Description = styled.p`
   color: #a8b2d1;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
 
   @media (max-width: 768px) {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.88rem;
   }
 `;
 
@@ -175,15 +168,16 @@ const AchievementItem = styled.li`
   display: flex;
   align-items: center;
   color: #a8b2d1;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
 
   svg {
     color: #64ffda;
-    margin-right: 0.75rem;
+    margin-right: 0.5rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 `;
 
@@ -194,48 +188,30 @@ const CertificateLink = styled.a`
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  font-size: 0.9rem;
 
   svg {
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
   }
 
   &:hover {
     color: #fff;
     transform: scale(1.05);
   }
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
 `;
 
 const experiences = [
-  // {
-  //   company: "Aptitude Guru Hem",
-  //   position: "Fullstack Developer Intern",
-  //   period: "06/2024 - 09/2024",
-  //   current: true,
-  //   description:
-  //     "Developed an affiliate marketing site for the Admin portal and GST Management System using the MERN stack with a focus on efficient data handling and user experience. Managed project tasks via Jira, handled deployment, integrated team tasks, and conducted code reviews.",
-  //   achievements: [
-  //     "Ensured code quality, security, and maintainability using SonarQube for static analysis",
-  //     "Improved user experience through efficient data handling",
-  //     "Managed team collaboration and productivity by handling task integration and code reviews",
-  //   ],
-  //   certification:
-  //     "https://res.cloudinary.com/dwiq4s5ut/image/upload/v1731597421/Screenshot_2024-11-12_220411_iuja2s.png",
-  // },
   {
     company: "Masai",
     position: "Masai Hackathon Edition",
     period: "48 Hours",
     current: false,
     description:
-      "Developed responsive user interfaces and interactive front-end features for MemeHub, enabling users to create, browse, and engage with memes using HTML, CSS, and JavaScript.",
+      "Developed responsive user interfaces and interactive features for MemeHub, enabling users to create, browse, and engage with memes.",
     achievements: [
-      "Developed MemesHub, a responsive web application for creating, browsing, and sharing memes using HTML, CSS, and JavaScript",
-      "Implemented interactive features such as likes, comments, and trending content to enhance user engagement",
-      "Ensured responsive design and smooth user experience across devices",
+      "Developed MemesHub web app for meme creation, browsing, and sharing using HTML, CSS, and JavaScript.",
+      "Implemented likes, comments, and trending features to boost user engagement.",
+      "Ensured responsive design and seamless UX across all devices.",
     ],
     certification:
       "https://res.cloudinary.com/dumhixyxy/image/upload/Hack_fi28k6",
@@ -246,13 +222,11 @@ const experiences = [
     period: "Jul 2024 - Dec 2024",
     current: false,
     description:
-      "Built and deployed full-stack web applications using Python, Django/Flask, and modern front-end technologies, ensuring seamless integration between back-end APIs and responsive user interfaces.",
+      "Built and deployed full-stack web apps using Python, Django/Flask, and modern front-end technologies.",
     achievements: [
-      "Completed Python Full-Stack Development, covering both back-end (Django/Flask, REST APIs, authentication, database management) and front-end (HTML, CSS, JavaScript, React) technologies",
-      "Developed dynamic and responsive web applications with CRUD functionality, secure authentication, and RESTful API integrations",
-      "Implemented database solutions using MySQL/PostgreSQL and optimized queries for performance",
-      "Deployed full-stack applications on cloud platforms (Heroku/Render) with CI/CD pipelines for automated deployment",
-      "Collaborated on real-world projects demonstrating proficiency in both client-side and server-side development",
+      "Completed Python Full-Stack Development with REST APIs and authentication.",
+      "Developed CRUD-based responsive applications with secure login systems.",
+      "Deployed projects using CI/CD pipelines and optimized database performance.",
     ],
     certification:
       "https://drive.google.com/file/d/1ZvrSxEuSU_tJuriCivXk3CdOCpXHEda-/view?usp=sharing",
@@ -287,7 +261,7 @@ const Experience = () => (
             </CompanyHeader>
 
             <Timeline>
-              <FaCalendarAlt style={{ marginRight: "0.5rem" }} />
+              <FaCalendarAlt style={{ marginRight: "0.4rem" }} />
               {exp.period}
             </Timeline>
 

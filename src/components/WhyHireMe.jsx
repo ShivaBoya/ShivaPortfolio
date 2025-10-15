@@ -23,7 +23,6 @@ const reasons = [
     title: "Core Skills",
     text: "Data Structures & Algorithms, OOPs Concepts, Analytical Skills, Problem-Solving, System Design Basics, Debugging & Optimization",
   },
-
   {
     icon: FaUsers,
     title: "Collaborative Team Player",
@@ -70,11 +69,11 @@ const fadeInUp = keyframes`
 const Container = styled.section`
   max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem 4rem; /* Reduced top padding to remove space above Work */
   background-color: transparent;
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem 3rem;
     margin-right: 60px;
   }
 `;
@@ -84,7 +83,8 @@ const Title = styled.h2`
   font-weight: 800;
   text-align: center;
   color: #64ffda;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  margin-top: 0; /* Ensures no unwanted space above title */
   position: relative;
 
   &::after {
