@@ -611,17 +611,17 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "service_w5dpy34",   // Your EmailJS Service ID
-        "template_nhtph3j",  // Your Template ID
+        "service_w5dpy34",   
+        "template_nhtph3j",  
         formRef.current,
-        "MX9SA7rk-Puvdk0mS" // Your Public Key
+        "MX9SA7rk-Puvdk0mS" 
       );
 
-      toast.success("✅ Message sent successfully!");
+      toast.success("Message sent successfully!");
       formRef.current.reset();
     } catch (error) {
       console.error("EmailJS Error:", error);
-      toast.error("❌ Failed to send message. Check your EmailJS setup.");
+      toast.error("Failed to send message. Check your EmailJS setup.");
     } finally {
       setIsSending(false);
     }
