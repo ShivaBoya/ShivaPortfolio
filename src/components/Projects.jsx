@@ -29,6 +29,31 @@ const projectCategories = {
       ],
     },
     {
+      name: "Roamly –AI Powered Outing Planner & Real-Time Collaboration App",
+      deployedLink:
+        "https://out-my-plannigs.vercel.app/",
+      githubLink: "https://github.com/ShivaBoya/OutPlannigs",
+      image:
+        "Romly.png",
+      description:
+        "AI-powered group outing planner with real-time collaboration and smart itineraries.",
+      features: [
+        "AI-powered group outing planner with real-time collaboration and smart event tools.",
+        "Designed a modern event dashboard with live chat, polls, and itinerary planning.",
+        "Implemented Socket.IO messaging & AI suggestions for seamless group coordination.",
+        " Built a full-stack scalable social platform with a premium UI/UX experience.",
+      ],
+      technologies: [
+        "React JS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT",
+        "Socket.IO",
+        "Tailwind Css",
+      ],
+    },
+    {
       name: "Nxt Trendz (E-Commerce Clone)",
       deployedLink: "https://nxttrendzrts.ccbp.tech/",
       githubLink: "https://github.com/ShivaBoya/Nxt_TrendeZ_Website",
@@ -115,6 +140,26 @@ const projectCategories = {
         label: "Certificate",
         icon: <FaCertificate />,
       },
+    },
+    {
+      name: "SoulConnect — AI-Powered Dating App",
+      deployedLink: "https://match-me-self.vercel.app/",
+      githubLink: "https://github.com/ShivaBoya/MatchMe",
+      image:
+        "Matchme.png",
+      description:
+        "An AI-powered social platform enabling smart profile matching, real-time chat with AI assistance, and secure Firebase authentication.",
+      features: [
+        "AI-driven profile matching for smarter and meaningful connections",
+        "Real-time chat with a built-in AI assistant for conversations & suggestions.",
+        "Secure Firebase authentication with Google Sign-In & full profile syncing",
+      ],
+      technologies: ["HTML", "CSS", "JavaScript", "React Js", "Tailwind CSS", "Firebase"],
+      // certificate: {
+      //   link: "https://res.cloudinary.com/dumhixyxy/image/upload/Hack_fi28k6",
+      //   label: "Certificate",
+      //   icon: <FaCertificate />,
+      // },
     },
     {
       name: "Meals Explorer Website",
