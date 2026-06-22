@@ -261,9 +261,9 @@ const Home = () => {
 
   const handleResumeClick = (e) => {
     e.preventDefault();
-    window.open("/ShivaBoyaFullStackResume (2).pdf", "_blank");
+    window.open("/ShivaBoyaFullStackResume.pdf", "_blank");
     const link = document.createElement("a");
-    link.href = "/ShivaBoyaFullStackResume (2).pdf";
+    link.href = "/ShivaBoyaFullStackResume.pdf";
     link.setAttribute("download", "BoyaShiva_Resume.pdf");
     document.body.appendChild(link);
     link.click();
@@ -332,7 +332,7 @@ const Home = () => {
           <ButtonContainer>
             <Button
               as="a"
-              href="/ShivaBoyaFullStackResume (2).pdf"
+              href="/ShivaBoyaFullStackResume.pdf"
               primary
               onClick={handleResumeClick}
             >

@@ -12,9 +12,9 @@ const Header = () => {
   const handleResumeClick = (e) => {
     e.preventDefault();
     closeMenu();
-    window.open("/ShivaBoyaFullStackResume (2).pdf", "_blank");
+    window.open("/ShivaBoyaFullStackResume.pdf", "_blank");
     const link = document.createElement("a");
-    link.href = "/ShivaBoyaFullStackResume (2).pdf";
+    link.href = "/ShivaBoyaFullStackResume.pdf";
     link.setAttribute("download", "ShivaBoyaFullStackResume.pdf");
     document.body.appendChild(link);
     link.click();
@@ -68,7 +68,7 @@ const Header = () => {
         <a href="#contact" className={activeSection === "contact" ? "active" : ""} onClick={closeMenu}>Contact</a>
 
         <a
-          href="/ShivaBoyaFullStackResume (2).pdf"
+          href="/ShivaBoyaFullStackResume.pdf"
           className="btn-download"
           onClick={handleResumeClick}
         >
