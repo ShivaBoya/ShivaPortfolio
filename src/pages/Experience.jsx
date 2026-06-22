@@ -423,7 +423,7 @@ const experiencesData = [
   {
     company: "PropFTX",
     role: "Full Stack Engineer",
-    duration: "Oct 2025 – Present",
+    duration: "Fed 2026 – Present",
     location: "Bangalore",
     logo: PropFTXLogo,
     techStack: ["Node.js", "React.js", "AWS Lambda", "JWT", "PostgreSQL", "REST APIs"],
@@ -437,7 +437,7 @@ const experiencesData = [
   {
     company: "Web3Today",
     role: "Full Stack Web Developer",
-    duration: "Jun 2025 – Oct 2025",
+    duration: "Dec 2025 – Feb 2026",
     location: "Hyderabad",
     logo: Web3TodayLogo,
     techStack: ["React.js", "Node.js", "Web3 APIs", "Telegram Mini Apps"],
