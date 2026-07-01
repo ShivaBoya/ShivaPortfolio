@@ -21,7 +21,7 @@ const reasons = [
   {
     icon: FaLightbulb,
     title: "Core Skills",
-    text: "Data Structures & Algorithms, OOPs Concepts, Analytical Skills, Problem-Solving, Clean Coding, Debugging & Optimization",
+    text: "Data Structures & Algorithms, OOPs Concepts, Analytical Skills, Problem-Solving, System Design Basics, Debugging & Optimization",
   },
   {
     icon: FaUsers,
@@ -69,12 +69,12 @@ const fadeInUp = keyframes`
 const Container = styled.section`
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10rem 9% 2rem;
+  padding: 2rem 2rem 4rem; /* Reduced top padding to remove space above Work */
   background-color: transparent;
-  min-height: auto;
 
   @media (max-width: 768px) {
     padding: 1.5rem 1rem 3rem;
+    margin-right: 60px;
   }
 `;
 
@@ -82,9 +82,9 @@ const Title = styled.h2`
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
-  color: var(--main-color);
+  color: #64ffda;
   margin-bottom: 3rem;
-  margin-top: 0; 
+  margin-top: 0; /* Ensures no unwanted space above title */
   position: relative;
 
   &::after {
@@ -95,7 +95,7 @@ const Title = styled.h2`
     transform: translateX(-50%);
     width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
   }
 
   @media (max-width: 768px) {
@@ -110,16 +110,12 @@ const Title = styled.h2`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   padding: 1rem;
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   @media (max-width: 768px) {
@@ -133,19 +129,29 @@ const ReasonCard = styled.div`
   opacity: 0;
   animation: ${fadeInUp} 0.5s ease-out forwards;
   animation-delay: ${(props) => props.index * 0.2}s;
-  background: #0b1120;
-  border-left: 5px solid var(--main-color);
-  border-radius: 8px;
-  padding: 2.5rem;
-  transition: all 0.4s ease;
+  background: rgba(100, 255, 218, 0.03);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px rgba(124, 240, 61, 0.3), inset 0 0 0 1px var(--main-color);
-    background: #0f172a;
+    transform: translateY(-5px);
+    background: rgba(100, 255, 218, 0.05);
+    box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.1);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #64ffda;
+    opacity: 0.5;
   }
 
   @media (max-width: 768px) {
@@ -157,7 +163,7 @@ const ReasonCard = styled.div`
 
 const IconWrapper = styled.div`
   font-size: 2rem;
-  color: var(--main-color);
+  color: #64ffda;
   margin-bottom: 1.5rem;
 
   @media (max-width: 768px) {
@@ -169,7 +175,7 @@ const IconWrapper = styled.div`
 const ReasonTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--main-color);
+  color: #64ffda;
   margin-bottom: 1rem;
 
   @media (max-width: 768px) {
@@ -188,9 +194,9 @@ const ReasonText = styled.p`
   }
 `;
 
-const Work = () => {
+const WhyHireMe = () => {
   return (
-    <Container id="work">
+    <Container>
       <Title>Work</Title>
       <Grid>
         {reasons.map((reason, index) => (
@@ -207,4 +213,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default WhyHireMe;

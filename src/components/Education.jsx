@@ -1,12 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import {  FaCalendarAlt, FaMapMarkerAlt, FaChevronRight } from 'react-icons/fa';
+
+const fadeIn = `
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+`;
 
 const Section = styled.section`
-  min-height: auto;
+  min-height: 100vh;
   background: transparent;
-  padding: 10rem 9% 2rem;
+  padding: 0rem 2rem;
   position: relative;
   overflow: hidden;
 
@@ -17,7 +23,7 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   
   @media (max-width: 768px) {
@@ -25,11 +31,11 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled(motion.h2)`
+const Title = styled.h2`
   font-size: 3rem;
   font-weight: 800;
   text-align: center;
-  color: var(--main-color);
+  color: #64ffda;
   margin-bottom: 4rem;
   position: relative;
   
@@ -41,7 +47,7 @@ const Title = styled(motion.h2)`
     transform: translateX(-50%);
     width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
   }
 `;
 
@@ -58,7 +64,7 @@ const Timeline = styled.div`
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(124, 240, 61, 0.2), var(--main-color), rgba(124, 240, 61, 0.2));
+    background: linear-gradient(to bottom, #64ffda20, #64ffda, #64ffda20);
 
     @media (max-width: 768px) {
       left: 0;
@@ -66,32 +72,37 @@ const Timeline = styled.div`
   }
 `;
 
-const TimelineItem = styled(motion.div)`
+const TimelineItem = styled.div`
   display: flex;
   justify-content: ${props => props.isEven ? 'flex-start' : 'flex-end'};
   padding: 2rem 0;
   width: 100%;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: ${props => props.index * 0.2}s;
+  opacity: 0;
   
   @media (max-width: 768px) {
     justify-content: flex-start;
     padding-left: 20px;
     width: calc(100% - 20px);
   }
+
+  ${fadeIn}
 `;
 
-const Card = styled(motion.div)`
+const Card = styled.div`
   width: 45%;
-  background: #0b1120;
-  border: 1px solid rgba(124, 240, 61, 0.1);
+  background: #141414;
+  border: 1px solid rgba(100, 255, 218, 0.1);
   border-radius: 16px;
   padding: 1.5rem;
   position: relative;
+  backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border-color: var(--main-color);
   }
 
   @media (max-width: 768px) {
@@ -105,7 +116,7 @@ const Card = styled(motion.div)`
     position: absolute;
     width: 16px;
     height: 16px;
-    background: var(--main-color);
+    background: #64ffda;
     border-radius: 50%;
     top: 50%;
     ${props => props.isEven ? 'right: -48px' : 'left: -48px'};
@@ -134,7 +145,7 @@ const DegreeTitle = styled.h3`
 
 const Institution = styled.h4`
   font-size: 1rem;
-  color: var(--main-color);
+  color: #64ffda;
   margin-bottom: 1.25rem;
   word-wrap: break-word;
 
@@ -164,8 +175,37 @@ const InfoItem = styled.div`
   overflow: hidden;
 
   svg {
-    color: var(--main-color);
+    color: #64ffda;
     flex-shrink: 0;
+  }
+`;
+
+const Details = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  border-top: 1px solid rgba(100, 255, 218, 0.1);
+  padding-top: 1.25rem;
+`;
+
+const DetailItem = styled.li`
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+
+  &::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
   }
 `;
 
@@ -173,8 +213,8 @@ const StatusBadge = styled.span`
   position: absolute;
   top: -12px;
   right: 20px;
-  background: linear-gradient(135deg, var(--main-color), var(--main-color));
-  color: black; 
+  background: linear-gradient(135deg, #64ffda, #64ffda);
+  color: white;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -187,6 +227,7 @@ const StatusBadge = styled.span`
     right: 10px;
   }
 `;
+
 
 const Education = () => {
   const educationData = [
@@ -240,56 +281,13 @@ const Education = () => {
     }
   ];
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
-  // Reverse slide for right-side items
-  const itemVariantsRight = {
-    hidden: { opacity: 0, x: 30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
   return (
     <Section id="education">
       <Container>
-        <Title
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          Educational Background
-        </Title>
+        <Title>Educational Background</Title>
         <Timeline>
           {educationData.map((edu, index) => (
-            <TimelineItem
-              key={index}
-              isEven={index % 2 === 0}
-              index={index}
-              variants={index % 2 === 0 ? itemVariants : itemVariantsRight}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
+            <TimelineItem key={index} isEven={index % 2 === 0} index={index}>
               <Card isEven={index % 2 === 0}>
                 {edu.current && <StatusBadge>Current</StatusBadge>}
                 <DegreeTitle>{edu.degree}</DegreeTitle>

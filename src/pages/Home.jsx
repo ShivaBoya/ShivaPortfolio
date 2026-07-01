@@ -251,19 +251,19 @@ const SocialLink = styled.a`
   }
 `;
 
-const roles = ["Full Stack Developer & Problem Solver"];
-
 const Home = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
+  const roles = ["Full Stack Developer & Problem Solver"];
+
   const handleResumeClick = (e) => {
     e.preventDefault();
-    window.open("/ShivaBoyaFullStackResume.pdf", "_blank");
+    window.open("/ShivaBoyaFullStackResume (2).pdf", "_blank");
     const link = document.createElement("a");
-    link.href = "/ShivaBoyaFullStackResume.pdf";
+    link.href = "/ShivaBoyaFullStackResume (2).pdf";
     link.setAttribute("download", "BoyaShiva_Resume.pdf");
     document.body.appendChild(link);
     link.click();
@@ -332,7 +332,7 @@ const Home = () => {
           <ButtonContainer>
             <Button
               as="a"
-              href="/ShivaBoyaFullStackResume.pdf"
+              href="/ShivaBoyaFullStackResume (2).pdf"
               primary
               onClick={handleResumeClick}
             >

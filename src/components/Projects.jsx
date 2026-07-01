@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import styled, { keyframes } from "styled-components";
 import { FaExternalLinkAlt, FaGithub, FaCertificate } from "react-icons/fa";
 
 const projectCategories = {
@@ -35,7 +34,7 @@ const projectCategories = {
         "https://out-my-plannigs.vercel.app/",
       githubLink: "https://github.com/ShivaBoya/OutPlannigs",
       image:
-        "https://cdn.sanity.io/images/jlfpc73d/production/a983761acb090ccb080dd2991b73055b9644b063-1280x840.jpg?q=60&auto=format",
+        "Romly.png",
       description:
         "AI-powered group outing planner with real-time collaboration and smart itineraries.",
       features: [
@@ -193,18 +192,23 @@ const projectCategories = {
   backend: [],
 };
 
-const Container = styled.section`
-  padding: 10rem 9% 2rem;
-  background: transparent;
-  min-height: auto;
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 `;
 
-const SectionTitle = styled(motion.h2)`
-  font-size: 3rem;
+const Container = styled.section`
+  padding: 0 2rem 2rem 2rem; /* Removed top space */
+  background: transparent;
+  min-height: 100vh;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
-  color: var(--main-color);
-  margin: 1rem 0 3rem 0; 
+  color: #64ffda;
+  margin: 1rem 0 3rem 0; /* reduced top margin */
   position: relative;
 
   &::after {
@@ -215,11 +219,11 @@ const SectionTitle = styled(motion.h2)`
     transform: translateX(-50%);
     width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
   }
 `;
 
-const ProjectNavigation = styled(motion.div)`
+const ProjectNavigation = styled.div`
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -228,41 +232,45 @@ const ProjectNavigation = styled(motion.div)`
 
 const NavButton = styled.button`
   background: ${(props) =>
-    props.$active ? "rgba(124, 240, 61, 0.1)" : "transparent"};
-  color: var(--main-color);
-  border: 1px solid rgba(124, 240, 61, 0.3);
+    props.$active ? "rgba(100, 255, 218, 0.1)" : "transparent"};
+  color: #64ffda;
+  border: 1px solid rgba(100, 255, 218, 0.3);
   padding: 0.5rem 1rem;
   border-radius: 99px;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(124, 240, 61, 0.2);
+    background: rgba(100, 255, 218, 0.2);
   }
 `;
 
-const ProjectsGrid = styled(motion.div)`
+const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 
-const ProjectCard = styled(motion.article)`
-  background: #0b1120;
+const ProjectCard = styled.article`
+  background: rgba(17, 34, 64, 0.8);
   border-radius: 0.8rem;
   overflow: hidden;
-  border: 1px solid rgba(124, 240, 61, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 255, 218, 0.1);
   transition: all 0.4s ease-in-out;
+  animation: ${fadeIn} 0.6s ease-out forwards;
+  animation-delay: ${(props) => props.$index * 0.2}s;
+  opacity: 0;
   height: 420px;
   display: flex;
   flex-direction: column;
 
   &:hover {
     transform: translateY(-5px);
-    border-color: var(--main-color);
-    box-shadow: 0 8px 25px -12px rgba(124, 240, 61, 0.2);
+    border-color: rgba(100, 255, 218, 0.3);
+    box-shadow: 0 8px 25px -12px rgba(100, 255, 218, 0.2);
   }
 `;
 
@@ -291,93 +299,72 @@ const ProjectContent = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: #e6f1ff;
-  margin-bottom: 0.5rem;
-  flex-shrink: 0;
+  margin-bottom: 0.75rem;
 `;
 
 const ProjectDescription = styled.p`
   color: #8892b0;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  margin-bottom: 0.8rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
   flex-grow: 1;
-  overflow-y: auto;
-  max-height: 100px;
-
-  /* Custom scrollbar for description */
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #1e293b; 
-    border-radius: 4px;
-  }
 `;
 
 const TechStack = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 0.8rem;
-  flex-shrink: 0;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
 `;
 
 const TechTag = styled.span`
-  background: rgba(124, 240, 61, 0.1);
-  color: var(--main-color);
-  padding: 0.4rem 0.8rem;
+  background: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  padding: 0.25rem 0.5rem;
   border-radius: 99px;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
 `;
 
 const ProjectLinks = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-top: auto;
-  flex-shrink: 0;
 `;
 
 const LinkButton = styled.a`
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 99px;
-  font-size: 1rem;
+  font-size: 0.7rem;
   text-decoration: none;
   background: ${(props) =>
-    props.$primary ? "rgba(124, 240, 61, 0.1)" : "transparent"};
-  color: var(--main-color);
-  border: 1px solid rgba(124, 240, 61, 0.3);
+    props.$primary ? "rgba(100, 255, 218, 0.1)" : "transparent"};
+  color: #64ffda;
+  border: 1px solid rgba(100, 255, 218, 0.3);
   transition: all 0.3s ease;
 
   svg {
-    font-size: 1rem;
-  }
-
-  &:hover {
-    background: transparent;
-    color: var(--main-color);
-    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 0.7rem;
   }
 `;
 
 const Credentials = styled.div`
   margin-top: 0.5rem;
   padding: 0.5rem;
-  background: rgba(124, 240, 61, 0.05);
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  flex-shrink: 0;
+  background: rgba(100, 255, 218, 0.05);
+  border-radius: 0.4rem;
+  font-size: 0.7rem;
 
   p {
     color: #8892b0;
     margin: 0;
 
     span {
-      color: var(--main-color);
+      color: #64ffda;
       font-weight: 500;
     }
   }
@@ -389,100 +376,68 @@ const Projects = () => {
   const renderProjects = (category) => {
     const categoryProjects = projectCategories[category] || [];
     return (
-      <ProjectsGrid layout>
-        <AnimatePresence>
-          {categoryProjects.map((project, index) => (
-            <ProjectCard
-              key={project.name}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-            >
-              <ProjectImage>
-                <img src={project.image} alt={project.name} />
-              </ProjectImage>
-              <ProjectContent>
-                <ProjectTitle>{project.name}</ProjectTitle>
-                <ProjectDescription>{project.description}</ProjectDescription>
-                <TechStack>
-                  {project.technologies.map((tech, i) => (
-                    <TechTag key={i}>{tech}</TechTag>
-                  ))}
-                </TechStack>
+      <ProjectsGrid>
+        {categoryProjects.map((project, index) => (
+          <ProjectCard key={index} $index={index}>
+            <ProjectImage>
+              <img src={project.image} alt={project.name} />
+            </ProjectImage>
+            <ProjectContent>
+              <ProjectTitle>{project.name}</ProjectTitle>
+              <ProjectDescription>{project.description}</ProjectDescription>
+              <TechStack>
+                {project.technologies.map((tech, i) => (
+                  <TechTag key={i}>{tech}</TechTag>
+                ))}
+              </TechStack>
 
-                {project.credentials && (
-                  <Credentials>
-                    <p>
-                      Demo Credentials: <br />
-                      <span>Username:</span> {project.credentials.username} <br />
-                      <span>Password:</span> {project.credentials.password}
-                    </p>
-                  </Credentials>
+              {project.credentials && (
+                <Credentials>
+                  <p>
+                    Demo Credentials: <br />
+                    <span>Username:</span> {project.credentials.username} <br />
+                    <span>Password:</span> {project.credentials.password}
+                  </p>
+                </Credentials>
+              )}
+
+              <ProjectLinks>
+                <LinkButton
+                  href={project.deployedLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  $primary
+                >
+                  <FaExternalLinkAlt /> Live Demo
+                </LinkButton>
+                <LinkButton
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub /> Code
+                </LinkButton>
+                {project.certificate && (
+                  <LinkButton
+                    href={project.certificate.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.certificate.icon} {project.certificate.label}
+                  </LinkButton>
                 )}
-
-                <ProjectLinks>
-                  <LinkButton
-                    href={project.deployedLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    $primary
-                  >
-                    <FaExternalLinkAlt /> Live Demo
-                  </LinkButton>
-                  <LinkButton
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub /> Code
-                  </LinkButton>
-                  {project.certificate && (
-                    <LinkButton
-                      href={project.certificate.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.certificate.icon} {project.certificate.label}
-                    </LinkButton>
-                  )}
-                </ProjectLinks>
-              </ProjectContent>
-            </ProjectCard>
-          ))}
-        </AnimatePresence>
+              </ProjectLinks>
+            </ProjectContent>
+          </ProjectCard>
+        ))}
       </ProjectsGrid>
     );
   };
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
-
   return (
-    <Container id="project">
-      <SectionTitle
-        variants={headerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        Featured Projects
-      </SectionTitle>
-      <ProjectNavigation
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-      >
+    <Container>
+      <SectionTitle>Featured Projects</SectionTitle>
+      <ProjectNavigation>
         <NavButton
           $active={activeCategory === "fullStack"}
           onClick={() => setActiveCategory("fullStack")}

@@ -209,7 +209,7 @@ const Skill = () => {
         <p>A comprehensive toolkit for building scalable digital solutions.</p>
       </Header>
 
-      {Object.entries(skillCategories).map(([category, skills]) => (
+      {Object.entries(skillCategories).map(([category, skills], catIndex) => (
         <CategoryContainer
           key={category}
           initial="hidden"

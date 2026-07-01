@@ -1,28 +1,314 @@
-import Header from "./components/Header";
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import WhyHireMe from "./components/WhyHireMe";
+import Education from "./components/Education";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./App.css";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Education from "./pages/Education";
-import Experience from "./pages/Experience";
-import Project from "./pages/Project";
-import Skill from "./pages/Skill";
-import Work from "./pages/Work";
-import Contact from "./pages/Contact";
+const Container = styled.div`
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+`;
 
-function App() {
+// Navigation Pulse Animation
+const logoPulse = keyframes`
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+`;
+
+// Navigation Styles
+const Nav = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: ${({ scrolled }) =>
+    scrolled ? "0 4px 10px rgba(0, 0, 0, 0.2)" : "none"};
+`;
+
+const NavWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+    width: 100%;
+  }
+`;
+
+const Logo = styled.a`
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0dd3c5;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  animation: ${logoPulse} 2s infinite;
+
+  &:hover {
+    color: #08b1a1;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const NavLinks = styled.div`
+  display: flex;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavLink = styled.a`
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0dd3c5;
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #0dd3c5;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0dd3c5;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+`;
+
+const ResumeButton = styled.button`
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0dd3c5;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: #08b1a1;
+  }
+`;
+
+const MenuIcon = styled.div`
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #0dd3c5;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin-right: 30px;
+  }
+`;
+
+const MobileMenu = styled.div`
+  position: fixed;
+  top: 0;
+  right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+const MobileNavLink = styled(NavLink)`
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+  width: 100%;
+`;
+
+const CloseIcon = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #0dd3c5;
+`;
+
+const Section = styled.section`
+  padding: 5rem 1rem;
+  margin-top: 4rem;
+  scroll-margin-top: 4rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0.5rem;
+  }
+`;
+
+// Main App Component
+const App = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  // ✅ Function to open + download resume
+  const handleResumeClick = () => {
+    // open in new tab
+    window.open("/BoyaShiva_Resume.pdf", "_blank");
+
+    // trigger download
+    const link = document.createElement("a");
+    link.href = "/BoyaShiva_Resume.pdf";
+    link.download = "BoyaShiva_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <>
-      <Header />
-      <Home />
-      <About />
-      <Education />
-      <Experience />
-      <Project />
-      <Skill />
-      <Work />
-      <Contact />
-    </>
+    <Container>
+      <Nav scrolled={scrolled}>
+        <NavWrapper>
+          <Logo href="#home">
+            <img
+              src="https://res.cloudinary.com/dumhixyxy/image/upload/ChatGPT_Image_Aug_21_2025_11_57_22_PM_dqam83"
+              alt="Logo"
+              style={{ width: "30px", height: "30px", objectFit: "contain" }}
+            />
+          </Logo>
+
+          <NavLinks>
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#education">Education</NavLink>
+            <NavLink href="#experience">Experience</NavLink>
+            <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#skills">Skills</NavLink>
+            <NavLink href="#why-hire-me">Work</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
+            <ResumeButton onClick={handleResumeClick}>Resume</ResumeButton>
+          </NavLinks>
+          <MenuIcon onClick={toggleMobileMenu}>
+            <FaBars />
+          </MenuIcon>
+        </NavWrapper>
+      </Nav>
+
+      <MobileMenu isOpen={mobileMenuOpen}>
+        <CloseIcon onClick={closeMobileMenu}>
+          <FaTimes />
+        </CloseIcon>
+        <MobileNavLink href="#home" onClick={closeMobileMenu}>
+          Home
+        </MobileNavLink>
+        <MobileNavLink href="#education" onClick={closeMobileMenu}>
+          Education
+        </MobileNavLink>
+        <MobileNavLink href="#experience" onClick={closeMobileMenu}>
+          Experience
+        </MobileNavLink>
+        <MobileNavLink href="#projects" onClick={closeMobileMenu}>
+          Projects
+        </MobileNavLink>
+        <MobileNavLink href="#skills" onClick={closeMobileMenu}>
+          Skills
+        </MobileNavLink>
+        <MobileNavLink href="#why-hire-me" onClick={closeMobileMenu}>
+          Work
+        </MobileNavLink>
+        <MobileNavLink href="#contact" onClick={closeMobileMenu}>
+          Contact
+        </MobileNavLink>
+        {/* Resume button in mobile */}
+        <MobileNavLink
+          as="button"
+          onClick={() => {
+            handleResumeClick();
+            closeMobileMenu();
+          }}
+        >
+          Resume
+        </MobileNavLink>
+      </MobileMenu>
+
+      <Section id="home">
+        <Home />
+      </Section>
+      <Section id="education">
+        <Education />
+      </Section>
+      <Section id="experience">
+        <Experience />
+      </Section>
+      <Section id="projects">
+        <Projects />
+      </Section>
+      <Section id="skills">
+        <Skills />
+      </Section>
+      <Section id="why-hire-me">
+        <WhyHireMe />
+      </Section>
+      <Section id="contact">
+        <Contact />
+      </Section>
+    </Container>
   );
-}
+};
 
 export default App;
